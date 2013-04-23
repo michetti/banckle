@@ -26,16 +26,16 @@ Or install it yourself as:
 ## Usage
 
 First, create the api object:
-'''api = Banckle::API.new(<userid>, <password>)'''
+```api = Banckle::API.new(<userid>, <password>)```
 
 Authenticate:
-'''token = api.authenticate(<product>)'''
+```token = api.authenticate(<product>)```
 
 And schedule meeting rooms:
-'''meeting_id = api.schedule_meeting(<subject>, <start>, <config>)'''
+```meeting_id = api.schedule_meeting(<subject>, <start>, <config>)```
 
 There is a helper method to retrieve the meeting url:
-''meeting_url = api.meeting_url(<meeting_id>)'
+```meeting_url = api.meeting_url(<meeting_id>)```
 
 
 ## Testing the Gem
@@ -43,7 +43,7 @@ There is a helper method to retrieve the meeting url:
 I'm using Rspec, but it ends up interacting with the API itself, so you
 need to edit spec/banckle_spec.rb, and set you userid and password.
 
-After doing this, just run: '''rspec spec/banckle_spec.rb'''
+After doing this, just run: ```rspec spec/banckle_spec.rb```
 
 
 ## Contributing
