@@ -20,13 +20,15 @@ describe "Banckle" do
 
       tomorrow = Time.now + (60  * 60 * 24)
       meeting_id = @api.create_scheduling_meeting("Testing", tomorrow)
+      puts "Meeting Id: #{meeting_id}"
 
       meeting_id.should_not be_nil
+      meeting_id.should_not be_zero
     end
 
     it "should know how to returng a meeting url" do
       fake_meeting_url = 123456
-      @api.meeting_url(123456).should eq("https://meeting.banckle.com/meeting?id=#{fake_meeting_url}")
+      Banckle::API.meeting_url(123456).should eq("https://meeting.banckle.com/meeting?id=#{fake_meeting_url}")
     end
 
   end

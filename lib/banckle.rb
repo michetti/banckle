@@ -54,7 +54,7 @@ module Banckle
 
      if json["success"]
        # return the meeting id
-       return json["return"]["result"].to_i
+       return json["return"]["id"].to_i
      end
 
      return nil
@@ -77,16 +77,17 @@ module Banckle
      parts << "record=#{config[:record].to_s}"
 
      json = open_and_parse("#{@conference_url}/createSchedulingMeeting", parts)
+     puts json
 
      if json["success"]
        # return the meeting id
-       return json["return"]["result"].to_i
+       return json["return"]["id"].to_i
      end
 
      return nil
    end
 
-   def meeting_url(id)
+   def self.meeting_url(id)
      return "https://meeting.banckle.com/meeting?id=#{id}"
    end
 
