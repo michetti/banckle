@@ -19,7 +19,7 @@ describe "Banckle" do
       @api.authenticate("conference").should be_true
 
       tomorrow = Time.now + (60  * 60 * 24)
-      meeting_id = @api.create_scheduling_meeting("Testing", tomorrow)
+      meeting_id = @api.create_scheduling_meeting("Testing Meeting", tomorrow)
       puts "Meeting Id: #{meeting_id}"
 
       meeting_id.should_not be_nil
